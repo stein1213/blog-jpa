@@ -59,6 +59,11 @@ public class BlogController {
         return ResponseEntity.ok(blogService.updateTitle(id, request));
     }
 
+
     // 코드 변경사항 가정
+
+  
+  
+    // 코드 수정 테스트2
 
 }
