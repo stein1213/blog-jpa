@@ -1,6 +1,7 @@
 package com.estsoft.blogjpa.model;
 
 import com.estsoft.blogjpa.dto.ArticleResponse;
+import com.estsoft.blogjpa.dto.CommentResponse;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,6 +12,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @EntityListeners(AuditingEntityListener.class)
 @Entity
@@ -37,6 +40,9 @@ public class Article {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
+    @OneToMany(mappedBy = "article")
+    private List<Comment> comments = new ArrayList<>();
+
 
     @Builder
     public Article(String title, String content) {
@@ -48,6 +54,9 @@ public class Article {
         return ArticleResponse.builder()
                 .title(title)
                 .content(content)
+                .createdAt(createdAt)
+                .updatedAt(updatedAt)
+                .comments(comments)
                 .build();
     }
 
