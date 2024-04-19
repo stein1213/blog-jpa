@@ -1,8 +1,6 @@
 package com.estsoft.blogjpa.dto;
 
-import com.estsoft.blogjpa.model.Comment;
 import lombok.*;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
