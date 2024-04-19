@@ -14,5 +14,4 @@ public class ArticleResponse {
     private String content;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private List<Comment> comments;
 }
