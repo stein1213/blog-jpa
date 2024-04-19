@@ -17,7 +17,6 @@ import java.util.List;
 @EntityListeners(AuditingEntityListener.class)
 @Entity
 @Getter
-@Setter
 @NoArgsConstructor
 public class Article {
     @Id
