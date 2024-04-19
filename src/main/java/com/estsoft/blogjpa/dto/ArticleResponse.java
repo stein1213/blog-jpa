@@ -6,6 +6,7 @@ import java.util.List;
 
 @Getter
 @NoArgsConstructor
+@Builder
 public class ArticleResponse {
     private String title;
     private String content;
