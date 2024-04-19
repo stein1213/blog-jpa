@@ -5,9 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class ArticleResponse {
     private String title;
     private String content;
