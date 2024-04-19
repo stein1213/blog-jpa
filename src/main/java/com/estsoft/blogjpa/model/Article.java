@@ -1,7 +1,6 @@
 package com.estsoft.blogjpa.model;
 
 import com.estsoft.blogjpa.dto.ArticleResponse;
-import com.estsoft.blogjpa.dto.CommentResponse;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -40,9 +39,6 @@ public class Article {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "article")
-    private List<Comment> comments = new ArrayList<>();
-
 
     @Builder
     public Article(String title, String content) {
@@ -56,7 +52,6 @@ public class Article {
                 .content(content)
                 .createdAt(createdAt)
                 .updatedAt(updatedAt)
-                .comments(comments)
                 .build();
     }
 
